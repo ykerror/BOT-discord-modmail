@@ -12,7 +12,7 @@ const bienvenueChanel ='688411985347477538'
 const departChanel ='675374925527253002'
 
 
-bot.login('Njg5MjExODk5NzIzNjQ0OTI4.XpCd3w.o7FWV2SjfWXflc7J4rgQ4d6i3lo');
+bot.login(process.env.TOKEN);
 
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
