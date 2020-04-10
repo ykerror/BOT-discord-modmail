@@ -2,11 +2,17 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const app = require('express')();
 const server = require('http').createServer(app);
-const prefix = '!';
+
+let prefix = '!';
+const idServeur = '675374925527252993'
+const categorieDemandes ='695593316041097247'
+const logsDemandes ='697507654410567741'
+const adminId ='675415572703346693'
+const bienvenueChanel ='688411985347477538'
+const departChanel ='675374925527253002'
 
 
-
-bot.login(process.env.TOKEN);
+bot.login('Njg5MjEwMjE1NDg4Njg0MDQ0.Xo4hYw.HHSUeWsqu-YWKBsDo1RE1AskaJc');
 
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
@@ -25,32 +31,32 @@ bot.on("ready", () => {
 // ***************************************************************************************************
 /*bot.on('guildBanAdd', user => {
     
-    bot.guilds.cache.get("675374925527252993").channels.cache.get('689423212681232460').send("**" + user.tag +"** vient de nous quitter. A bientôt l'ami !");
+    bot.guilds.cache.get(idServeur).channels.cache.get('689423212681232460').send("**" + user.tag +"** vient de nous quitter. A bientôt l'ami !");
 });
 */
 // ***************************************************************************************************
 // ======================================= NOUVEL UTILISATEUR ========================================
 // ***************************************************************************************************
-/*
+
 bot.on('guildMemberAdd', member => {
     
     NewUser = member.user;
     let attention = bot.emojis.cache.find(emoji => emoji.name === "attention");
-    member.guild.channels.cache.get('688411985347477538').send("Salut "+"<@" + NewUser + ">" +`, bienvenue sur le serveur communautaire de la French Gaming Family ! 🤗 🎉\r\n\r\n__**N'oublie pas d'aller dans le channel <#517883101469343785> pour choisir ton support et les jeux auxquels tu joues afin de faire apparaître les différents salons.**__💪💪\r\n\r\n__**${attention}Tu ne pourras pas écrire avant d'avoir choisi tes jeux et supports !**__\r\n\r\n`); 
+    member.guild.channels.cache.get(bienvenueChanel).send("Salut "+"<@" + NewUser + ">" +`, bienvenue sur le serveur communautaire de la French Gaming Family ! 🤗 🎉\r\n\r\n__**N'oublie pas d'aller dans le channel <#685912863428313140> pour pouvoir vérifier l'actualité sur le serveur ${attention} si tu veux pouvoir rejoindre notre équipe de devs n'hésite pas a envoyer un message privé a <@611468402263064577>__\r\n\r\n`); 
     member.user.send("Test");
 
 });
-*/
+
 // ***************************************************************************************************
 // ================================== UTILISATEUR QUITTE LE SERVEUR ==================================
 // ***************************************************************************************************
-/*
+
 bot.on('guildMemberRemove', member => {
     
     user = member.user
-    member.guild.channels.cache.get('697507654410567741').send("**" + user.tag +"** vient de nous quitter. A bientôt l'ami !");
+    member.guild.channels.cache.get(departChanel).send("**" + user.tag +"** vient de nous quitter. A bientôt l'ami !");
 });
-*/
+
 // ***************************************************************************************************
 // =================================== A LA RECEPTION D'UN MESSAGE ===================================
 // ***************************************************************************************************
@@ -112,6 +118,7 @@ bot.on("message", function(message) {
                 var entier = entierAleatoire(1, 10);
                 message.reply(entier)
             }
+           
           }
               
 
@@ -124,11 +131,11 @@ bot.on("message", function(message) {
             
             if(!message.author.bot) { // Si l'auteur du message n'est pas un bot
 
-                var server = bot.guilds.cache.get("675374925527252993");
+                var server = bot.guilds.cache.get(idServeur);
                 var name = message.author.username+"#"+message.author.discriminator;
                 var channelName = message.author.username+message.author.discriminator;
-                var user = bot.guilds.cache.get("675374925527252993").members.cache.get(message.author.id)
-                var category = server.channels.cache.get('695593316041097247')
+                var user = bot.guilds.cache.get(idServeur).members.cache.get(message.author.id)
+                var category = server.channels.cache.get(categorieDemandes)
                 var exists = false;
                 var chanId;
 
@@ -151,7 +158,7 @@ bot.on("message", function(message) {
                         chan.setParent(category.id).then(e => { // On met le nouveau channel dans la bonne catégorie
                             
                             chan.updateOverwrite(chan.guild.roles.everyone, { VIEW_CHANNEL: false }).then(i => { // On interdit a tout le monde de voir le channel
-                                let role = chan.guild.roles.cache.get('675415572703346693')
+                                let role = chan.guild.roles.cache.get(adminId)
                                 let date = new Date()
                                 let now = ((date.getDate() < 10) ? "0"+date.getDate() : date.getDate())+"/"+((date.getMonth() < 10) ? "0"+date.getMonth() : date.getMonth())+"/"+date.getFullYear()+" à "+date.getHours()+":"+date.getMinutes()
                                 chan.send("<@&"+role.id+"> Nouvelle demande de {"+message.author.id+"} ** "+name+" ** le "+now+" :\r\n"+message.content)
@@ -188,7 +195,7 @@ bot.on("message", function(message) {
             
             if(!message.author.bot) { // Si l'utilisateur n'est pas un bot
                 
-                if(message.member.roles.cache.get('675415572703346693')) { // Si l'utilisateur est bien admin
+                if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
 
                     var name = "Admin";
                     const mess = message.content.split(/ +/g);
@@ -209,7 +216,7 @@ bot.on("message", function(message) {
                             message.channel.messages.fetch()
                             .then(msgs => {
 
-                                let role = message.channel.guild.roles.cache.get('675415572703346693')
+                                let role = message.channel.guild.roles.cache.get(adminId)
 
                                 if(!msgs.last().mentions.has(role)) {
 
@@ -254,7 +261,7 @@ bot.on("message", function(message) {
                         // ---------------------------------- COMMANDES CLOSE -----------------------------------------
                         case prefix+"close":
                             
-                            if(message.channel.parent == bot.guilds.cache.get("675374925527252993").channels.cache.get('695593316041097247')){
+                            if(message.channel.parent == bot.guilds.cache.get(idServeur).channels.cache.get(categorieDemandes)){
                                 
                                 var oldMessage;
                                 var usr
@@ -264,7 +271,7 @@ bot.on("message", function(message) {
                                 message.channel.messages.fetch()
                                 .then(msgs => {
 
-                                    let role = message.channel.guild.roles.cache.get('675415572703346693')
+                                    let role = message.channel.guild.roles.cache.get(adminId)
 
                                     if(!msgs.last().mentions.has(role)) {
 
@@ -283,7 +290,7 @@ bot.on("message", function(message) {
                                                 var newContent = newContentArray.join(":")
 
                                                 bot.users.cache.get(userId).send("Demande traitée par un administrateur. Merci d'avoir fait appel à Spiritus, le bot relai de la FGF.\r\nPour une nouvelle requête, n'hésitez pas à  contacter de nouveau Spiritus.").then(msg => {
-                                                    bot.guilds.cache.get("675374925527252993").channels.cache.get('697507654410567741').send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
+                                                    bot.guilds.cache.get(idServeur).channels.cache.get(logsDemandes).send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
                                                         message.channel.delete()
                                                     })
                                                     
@@ -305,7 +312,7 @@ bot.on("message", function(message) {
                                         var newContent = newContentArray.join(":")
 
                                         bot.users.cache.get(userId).send("Demande traitée par un administrateur. Merci d'avoir fait appel à Spiritus, le bot relai de la FGF.\r\nPour une nouvelle requête, n'hésitez pas à  contacter de nouveau Spiritus.").then(msg => {
-                                            bot.guilds.cache.get("675374925527252993").channels.cache.get('697507654410567741').send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
+                                            bot.guilds.cache.get(idServeur).channels.cache.get(logsDemandes).send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
                                                 message.channel.delete()
                                             })
                                         })
@@ -396,7 +403,7 @@ bot.on("message", function(message) {
                             
                             if(typeof message.mentions.members.first() !== "undefined") {
                                 
-                                memberAdd = bot.guilds.cache.get("675374925527252993").members.cache.get(message.mentions.members.first().id)
+                                memberAdd = bot.guilds.cache.get(idServeur).members.cache.get(message.mentions.members.first().id)
                                 message.delete()
                                 let check2 = bot.emojis.cache.find(emoji => emoji.name === "check2");
                                  let utilisateur = message.mentions.members.first()
@@ -424,7 +431,7 @@ bot.on("message", function(message) {
                             let roleRem
                             
                             if(typeof message.mentions.members.first() !== "undefined") {
-                                memberRem = bot.guilds.cache.get("675374925527252993").members.cache.get(message.mentions.members.first().id)
+                                memberRem = bot.guilds.cache.get(idServeur).members.cache.get(message.mentions.members.first().id)
                                 message.delete()
                                 let check2 = bot.emojis.cache.find(emoji => emoji.name === "check2");
                                  let utilisateur = message.mentions.members.first()
