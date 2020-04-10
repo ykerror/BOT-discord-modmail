@@ -6,7 +6,7 @@ const prefix = '!!';
 
 
 
-bot.login('Njg5MjExODk5NzIzNjQ0OTI4.Xo4mEw.IF-WqkjYQXVYuR0yKOyatn8QCx8');
+bot.login(prosess.env.TOKEN);
 
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
