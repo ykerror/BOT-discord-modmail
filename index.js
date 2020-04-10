@@ -42,7 +42,7 @@ bot.on('guildMemberAdd', member => {
     
     NewUser = member.user;
     let attention = bot.emojis.cache.find(emoji => emoji.name === "attention");
-    member.guild.channels.cache.get(bienvenueChanel).send("Salut "+"<@" + NewUser + ">" +`, bienvenue sur le serveur communautaire de la French Gaming Family Dev ! 🤗** 🎉\r\n\r\n__**N'oublie pas d'aller dans le channel <#685912863428313140> pour pouvoir vérifier l'actualité sur le serveur \r\n${attention} si tu veux pouvoir rejoindre notre équipe de devs n'hésite pas a envoyer un message privé a <@611468402263064577> !__\r\n\r\n`); 
+    member.guild.channels.cache.get(bienvenueChanel).send("**Salut **"+"<@" + NewUser + ">" +`**, bienvenue sur le serveur communautaire de la French Gaming Family Dev ! 🤗** 🎉\r\n\r\n __**N'oublie pas d'aller dans le channel <#685912863428313140> pour pouvoir vérifier l'actualité sur le serveur \r\n${attention} Si tu veux pouvoir rejoindre notre équipe de devs n'hésite pas a envoyer un message privé a <@611468402263064577> !**__\r\n\r\n`); 
     member.user.send("Test");
 
 });
