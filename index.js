@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const app = require('express')();
 const server = require('http').createServer(app);
-const prefix = '!!';
+const prefix = '!';
 
 
 
