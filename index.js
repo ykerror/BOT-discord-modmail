@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const app = require('express')();
 const server = require('http').createServer(app);
 
-let prefix = '!';
+const prefix = '!'
 const idServeur = '675374925527252993'
 const categorieDemandes ='695593316041097247'
 const logsDemandes ='697507654410567741'
@@ -12,7 +12,7 @@ const bienvenueChanel ='688411985347477538'
 const departChanel ='675374925527253002'
 
 
-bot.login('Njg5MjEwMjE1NDg4Njg0MDQ0.Xo4hYw.HHSUeWsqu-YWKBsDo1RE1AskaJc');
+bot.login('Njg5MjExODk5NzIzNjQ0OTI4.XpCd3w.o7FWV2SjfWXflc7J4rgQ4d6i3lo');
 
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
@@ -42,7 +42,7 @@ bot.on('guildMemberAdd', member => {
     
     NewUser = member.user;
     let attention = bot.emojis.cache.find(emoji => emoji.name === "attention");
-    member.guild.channels.cache.get(bienvenueChanel).send("Salut "+"<@" + NewUser + ">" +`, bienvenue sur le serveur communautaire de la French Gaming Family ! 🤗 🎉\r\n\r\n__**N'oublie pas d'aller dans le channel <#685912863428313140> pour pouvoir vérifier l'actualité sur le serveur ${attention} si tu veux pouvoir rejoindre notre équipe de devs n'hésite pas a envoyer un message privé a <@611468402263064577>__\r\n\r\n`); 
+    member.guild.channels.cache.get(bienvenueChanel).send("Salut "+"<@" + NewUser + ">" +`, bienvenue sur le serveur communautaire de la French Gaming Family ! 🤗 🎉\r\n\r\n__**N'oublie pas d'aller dans le channel <#685912863428313140> pour pouvoir vérifier l'actualité sur le serveur ${attention} si tu veux pouvoir rejoindre notre équipe de devs n'hésite pas a envoyer un message privé a <@611468402263064577> !__\r\n\r\n`); 
     member.user.send("Test");
 
 });
