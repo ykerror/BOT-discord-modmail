@@ -29,7 +29,6 @@ module.exports = (client)=>{
             client.on("message", function(message) {
                 if(!message.author.bot){       
                     if(message.content===prefix+"commandes"){
-                        const user = message.author
                         const exampleEmbed = new Discord.MessageEmbed()
                         .setColor('#8bc34a')
                         .setTitle('[Commandes ]')
@@ -46,7 +45,7 @@ module.exports = (client)=>{
                         ${g4} **${prefix}avatar** montre votre avatar au grand format
                         ${g4} **${prefix}pileouface** faites jouer le hasard !
                         ${g4} **${prefix}dés** lance un dés a 6 faces`)
-                        .setThumbnail(user.displayAvatarURL())
+                        //.setThumbnail(user.displayAvatarURL())
                         .setTimestamp()
                         .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
                         message.reply(exampleEmbed)
