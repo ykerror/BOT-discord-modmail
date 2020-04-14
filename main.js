@@ -24,6 +24,7 @@ client.on('ready',(message)=> require('./commands/message.js')(client,message));
 
 client.on('ready',()=> require('./events/ready.js')(client));
 client.on('guildMemberAdd',(member)=>require('./events/guildMemberAdd.js')(client,member));
+client.on('guildMemberRemove',(member)=>require('./events/guildMemberRemove.js')(client,member));
 
 client.login(process.env.TOKEN)
 
