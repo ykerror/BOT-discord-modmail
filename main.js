@@ -12,7 +12,6 @@ const client = new Client({disableEveryone: true});
 
 client.commands = new Collection();
 
-client.commandes.set('repeat',()=> require('./commands/public/ping.js'));
 
 client.on('ready',()=> require('./commands/public/ping.js')(client));
 client.on('ready',()=> require('./commands/public/general.js')(client));
