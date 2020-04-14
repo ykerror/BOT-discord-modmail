@@ -1,5 +1,7 @@
 
 module.exports = (client)=>{
+    const Discord =require('discord.js');
+
     const prefix = '!'
     const exampleEmbed = new Discord.MessageEmbed()
                         .setColor('#8bc34a')
