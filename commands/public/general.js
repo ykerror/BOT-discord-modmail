@@ -4,14 +4,14 @@ module.exports = (client)=>{
         if(!message.author.bot) {
 
         if(message.content===prefix+"commandes"){
-            let g4 = bot.emojis.cache.find(emoji => emoji.name === "g4");
+            let g4 = client.emojis.cache.find(emoji => emoji.name === "g4");
             message.reply(`Voici les commandes enregistrer :\r\n ${g4} **${prefix}spiritus** Donne le liste des commandes du BOT\r\n ${g4} **${prefix}fb** Donne le lien de notre page facebook \r\n ${g4} **${prefix}twitter** Donne le lien de notre page twitter\r\n ${g4} **${prefix}insta** Donne le lien de notre page instagram\r\n ${g4} **${prefix}utip** Donne le lien de notre page utip`);          
         }
         if(message.content===prefix+"avatar"){
             message.reply(message.author.displayAvatarURL());
         }
         if(message.content==="!guilem"){
-            let bon = bot.emojis.cache.find(emoji => emoji.name === "bon");
+            let bon = client.emojis.cache.find(emoji => emoji.name === "bon");
             message.channel.send('<@345943442817286146> : miam miam les couilles de noval sont délicieuses !')
             message.channel.send(`${bon}`)
 
