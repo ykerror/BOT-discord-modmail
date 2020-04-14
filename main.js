@@ -18,7 +18,6 @@ client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
 client.on('ready',(message)=> require('./moderateur/addrole.js')(client,message));
 client.on('ready',(message)=> require('./moderateur/remrole.js')(client,message));
 client.on('ready',(message)=> require('./commands/message.js')(client,message));
-client.on('ready',(message)=> require('./moderateur/kick.js')(client,message));
 
 
 
