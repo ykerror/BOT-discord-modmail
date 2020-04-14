@@ -4,7 +4,7 @@ const client = new Client({disableEveryone: true});
     const categorieDemandes ='695593316041097247'
     const logsDemandes ='697507654410567741'
     const adminId ='675415572703346693'
-    const prefix ='????'
+    const prefix ='!'
     const app = require('express')();
     const server = require('http').createServer(app);
 

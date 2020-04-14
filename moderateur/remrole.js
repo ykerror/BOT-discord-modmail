@@ -3,7 +3,7 @@ module.exports = (client)=>{
     const idServeur = '675374925527252993'
 
 client.on("message", function(message) {
-        if(message.content.startsWith('????rem')){
+        if(message.content.startsWith(prefix+'rem')){
         if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
 
         let memberRem

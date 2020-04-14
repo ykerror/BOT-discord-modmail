@@ -1,4 +1,5 @@
 module.exports = (client)=>{
+    const prefix = '!'
     client.on("message", function(message) {
         if(!message.author.bot) {
 

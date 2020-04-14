@@ -1,9 +1,10 @@
 module.exports = (client)=>{
     const adminId ='675415572703346693'
     const idServeur = '675374925527252993'
+    const prefix = '!'
 
     client.on("message", function(message) {
-                if(message.content.startsWith('????m')){
+                if(message.content.startsWith(prefix+'m')){
                     if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
 
                     if(typeof message.mentions.channels.first() === 'undefined') {
