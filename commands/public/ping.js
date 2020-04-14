@@ -1,4 +1,4 @@
-module.exports = (client) => {
+module.exports = (client,message) => {
     const prefix = '!'
     client.on("message", function(message) {
         if(message.content===prefix+"ping"){
