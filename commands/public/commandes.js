@@ -28,7 +28,7 @@ module.exports = (client)=>{
                         //.setThumbnail(user.displayAvatarURL())
                         .setTimestamp()
                         .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
-                        message.reply(exampleEmbed)
+                        message.chanel.send(exampleEmbed)
 
                     }
                 }
