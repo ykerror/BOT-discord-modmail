@@ -1,8 +1,8 @@
 
 module.exports = (client)=>{
     const Discord =require('discord.js');
-    let fleche = bot.emojis.cache.find(emoji => emoji.name === "fleche");
-    let g4 = bot.emojis.cache.find(emoji => emoji.name === "g4");
+    let fleche = client.emojis.cache.find(emoji => emoji.name === "fleche");
+    let g4 = client.emojis.cache.find(emoji => emoji.name === "g4");
     const prefix = '!'
     const exampleEmbed = new Discord.MessageEmbed()
                         .setColor('#8bc34a')
