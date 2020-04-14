@@ -12,9 +12,9 @@ const client = new Client({disableEveryone: true});
 
 client.commands = new Collection();
 
-client.commands.set('ping',()=> require('./commands/public/ping.js'));
-client.commands.set('ready',()=> require('./commands/public/general.js')(client));
-client.commands.set('ready',()=> require('./commands/public/reseaux.js')(client));
+client.on('ping',()=> require('./commands/public/ping.js'));
+client.on('ready',()=> require('./commands/public/general.js')(client));
+client.on('ready',()=> require('./commands/public/reseaux.js')(client));
 client.on('ready',(message)=> require('./moderateur/addrole.js')(client,message));
 client.on('ready',(message)=> require('./moderateur/remrole.js')(client,message));
 client.on('ready',(message)=> require('./commands/message.js')(client,message));
