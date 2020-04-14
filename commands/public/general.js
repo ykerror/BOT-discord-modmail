@@ -9,15 +9,15 @@ module.exports = (client)=>{
 
             message.reply(`Voici les commandes enregistrer :\r\n 
             ${fleche} **Les réseaux sociaux**\r\n 
-            ${g4} **${prefix}fb** Donne le lien de notre page facebook \r\n 
-            ${g4} **${prefix}twitter** Donne le lien de notre page twitter\r\n 
-            ${g4} **${prefix}insta** Donne le lien de notre page instagram\r\n 
-            ${g4} **${prefix}utip** Donne le lien de notre page utip\r\n
-            ${g4} **${prefix}youtube** Donne le lien de notre chaine youtube\r\n
+            ${g4} **${prefix}fb** Donne le lien de notre page facebook
+            ${g4} **${prefix}twitter** Donne le lien de notre page twitter
+            ${g4} **${prefix}insta** Donne le lien de notre page instagram
+            ${g4} **${prefix}utip** Donne le lien de notre page utip
+            ${g4} **${prefix}youtube** Donne le lien de notre chaine youtube
             ${fleche} **Les commandes**\r\n 
-            ${g4} **${prefix}avatar** montre votre avatar au grand format\r\n
-            ${g4} **${prefix}pileouface** faites jouer le hasard !\r\n
-            ${g4} **${prefix}dés** lance un dés a 6 faces\r\n`);          
+            ${g4} **${prefix}avatar** montre votre avatar au grand format
+            ${g4} **${prefix}pileouface** faites jouer le hasard !
+            ${g4} **${prefix}dés** lance un dés a 6 faces`);          
         }
         if(message.content===prefix+"avatar"){
             message.reply(message.author.displayAvatarURL());
