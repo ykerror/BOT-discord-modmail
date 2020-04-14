@@ -11,10 +11,10 @@ module.exports = (client)=>{
                     if(message.content===prefix+"commandes"){
                         const exampleEmbed = new Discord.MessageEmbed()
                         .setColor('#8bc34a')
-                        .setTitle('[Commandes ]')
+                        .setTitle('[Commandes]')
                         .setURL('https://discordapp.com/channels/502528973012467723/502529309358161933')
                         .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/1584471129028.png')
-                        .setDescription(`Voici les commandes enregistrer :\r\n 
+                        .setDescription(`__**Voici les commandes enregistrer :**__\r\n 
                         ${fleche} **Les réseaux sociaux**\r\n 
                         ${g4} **${prefix}fb** Donne le lien de notre page facebook
                         ${g4} **${prefix}twitter** Donne le lien de notre page twitter
