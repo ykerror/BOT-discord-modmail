@@ -26,7 +26,7 @@ client.on('ready',(message)=> require('./moderateur/kick.js')(client,message));
 client.on('ready',()=> require('./events/ready.js')(client));
 client.on('guildMemberAdd',(member)=>require('./events/guildMemberAdd.js')(client,member));
 
-client.login('Njg5MjExNjEwMzA0MzQ4MzMx.XpSO2Q.7fphvdRY5uHlvK-OzE7crilD3xA')
+client.login(process.env.TOKEN)
 
 
 
