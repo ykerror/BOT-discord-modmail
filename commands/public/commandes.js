@@ -20,7 +20,7 @@ module.exports = (client)=>{
                         ${g4} **${prefix}twitter** Donne le lien de notre page twitter
                         ${g4} **${prefix}insta** Donne le lien de notre page instagram
                         ${g4} **${prefix}utip** Donne le lien de notre page utip
-                        ${g4} **${prefix}youtube** Donne le lien de notre chaine youtube
+                        ${g4} **${prefix}youtube** Donne le lien de notre chaine youtube\r\n
                         ${fleche} **Les commandes**\r\n 
                         ${g4} **${prefix}avatar** montre votre avatar au grand format
                         ${g4} **${prefix}pileouface** faites jouer le hasard !
