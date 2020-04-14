@@ -1,24 +1,7 @@
 module.exports = (client)=>{
     const prefix = '!'
     client.on("message", function(message) {
-        if(!message.author.bot) {
-
-        if(message.content===prefix+"commandes"){
-            let g4 = client.emojis.cache.find(emoji => emoji.name === "g4");
-            let fleche = client.emojis.cache.find(emoji => emoji.name === "fleche");
-
-            message.reply(`Voici les commandes enregistrer :\r\n 
-        ${fleche} **Les réseaux sociaux**\r\n 
-        ${g4} **${prefix}fb** Donne le lien de notre page facebook
-        ${g4} **${prefix}twitter** Donne le lien de notre page twitter
-        ${g4} **${prefix}insta** Donne le lien de notre page instagram
-        ${g4} **${prefix}utip** Donne le lien de notre page utip
-        ${g4} **${prefix}youtube** Donne le lien de notre chaine youtube
-        ${fleche} **Les commandes**\r\n 
-        ${g4} **${prefix}avatar** montre votre avatar au grand format
-        ${g4} **${prefix}pileouface** faites jouer le hasard !
-        ${g4} **${prefix}dés** lance un dés a 6 faces`);          
-        }
+        if(!message.author.bot){       
         if(message.content===prefix+"avatar"){
             message.reply(message.author.displayAvatarURL());
         }

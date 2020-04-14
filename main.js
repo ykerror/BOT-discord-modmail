@@ -15,6 +15,7 @@ client.commands = new Collection();
 
 client.on('ready',()=> require('./commands/public/ping.js')(client));
 client.on('ready',()=> require('./commands/public/general.js')(client));
+client.on('ready',()=> require('./commands/public/commandes.js')(client));
 client.on('ready',()=> require('./commands/public/reseaux.js')(client));
 client.on('ready',(message)=> require('./moderateur/addrole.js')(client,message));
 client.on('ready',(message)=> require('./moderateur/remrole.js')(client,message));
