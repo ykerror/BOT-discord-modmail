@@ -12,10 +12,9 @@ const client = new Client({disableEveryone: true});
 
 client.commands = new Collection();
 
-client.on('ready',()=> require('./commands/public/ping.js')(client));
-client.on('ready',()=> require('./commands/public/general.js')(client));
-client.on('ready',()=> require('./commands/public/reseaux.js')(client));
-client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
+client.commands.set('ping',()=> require('./commands/public/ping.js'));
+client.commands.set('ready',()=> require('./commands/public/general.js')(client));
+client.commands.set('ready',()=> require('./commands/public/reseaux.js')(client));
 client.on('ready',(message)=> require('./moderateur/addrole.js')(client,message));
 client.on('ready',(message)=> require('./moderateur/remrole.js')(client,message));
 client.on('ready',(message)=> require('./commands/message.js')(client,message));
@@ -26,6 +25,7 @@ client.on('ready',(message)=> require('./commands/message.js')(client,message));
 client.on('ready',()=> require('./events/ready.js')(client));
 client.on('guildMemberAdd',(member)=>require('./events/guildMemberAdd.js')(client,member));
 client.on('guildMemberRemove',(member)=>require('./events/guildMemberRemove.js')(client,member));
+client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
 
 client.login(process.env.TOKEN)
 
