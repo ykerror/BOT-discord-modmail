@@ -1,8 +1,11 @@
 module.exports = (client,message)=>{
     const Discord = require('discord.js');
+    const adminId ='675415572703346693'
 
     client.on("message", function(message) {
         if (message.content.startsWith("$kick")) {
+            if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
+
             if(typeof message.mentions.members.first() !== "undefined"){
             let user = message.mentions.users.first()
             let arrayMsg = message.content.split(/ +/g)
@@ -32,6 +35,7 @@ module.exports = (client,message)=>{
                 message.reply('Vous n\'avez pas mentionner de personne a kick :cry:')
             }
         }
+    }
     });
             
         
