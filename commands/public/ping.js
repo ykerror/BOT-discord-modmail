@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = (client) => {
     const prefix = '!'
     if(message.content===prefix+"ping"){
         let debut = Date.now();
