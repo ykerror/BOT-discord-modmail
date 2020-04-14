@@ -11,10 +11,7 @@ module.exports = (client)=>{
                     if(message.content===prefix+"avatar"){
                         if(typeof message.mentions.users.first() !== 'undefined') {
                             let user_m = message.mentions.users.first()
-                            message.reply(message.user_m.displayAvatarURL());
-
-                        }else{
-                            message.reply(message.author.displayAvatarURL());
+                            message.reply(message.user_m.avatar);
 
                         }
                         
