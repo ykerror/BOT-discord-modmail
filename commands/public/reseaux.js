@@ -13,7 +13,7 @@ module.exports = (client)=>{
             .setDescription('Voici le lien de notre page instagram : \r\n  https://www.instagram.com/french_gaming_family ')
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
-            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
+            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/14.png');
             message.channel.send(exampleEmbed)
         }
         if(message.content===prefix+"fb"){
@@ -25,7 +25,7 @@ module.exports = (client)=>{
             .setDescription('Voici le lien de notre page facebook : \r\n  https://www.facebook.com/FrenchGamingFamily ')
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
-            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
+            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/14.png');
             message.channel.send(exampleEmbed)  
         }
         if(message.content===prefix+"twitter"){
@@ -37,7 +37,7 @@ module.exports = (client)=>{
             .setDescription('Voici le lien de notre page twitter : \r\n  https://twitter.com/FGamingFamily?s=09 ')
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
-            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
+            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/14.png');
             message.channel.send(exampleEmbed)    
         }
         if(message.content===prefix+"utip"){
@@ -49,7 +49,7 @@ module.exports = (client)=>{
             .setDescription('Voici le lien de notre utip  : \r\n  https://www.utip.io/fgfunited \r\n un grand merci a toi ce soutiens nous aide vraiment donc un grand merci pour cela ')
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
-            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
+            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/14.png');
             message.channel.send(exampleEmbed)  
         }
         if(message.content===prefix+"youtube"){
@@ -61,7 +61,7 @@ module.exports = (client)=>{
             .setDescription('Voici le lien de notre utip  : \r\n  https://www.youtube.com/channel/UCAKPauxXArnTWn9WuYldY-Q ')
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
-            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
+            .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/14.png');
             message.channel.send(exampleEmbed)  
         }
     });
