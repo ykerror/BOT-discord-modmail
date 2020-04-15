@@ -34,7 +34,7 @@ module.exports = (client)=>{
                         .setTimestamp()
                         .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
                     
-                        message.guild.channels.cache.get("695688539588919346").send(exampleEmbed);
+                        message.guild.channels.cache.get("697507654410567741").send(exampleEmbed);
                         }).catch(() => {
                          // Failmessage
                         message.channel.send("Access Denied");
