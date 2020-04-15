@@ -9,7 +9,16 @@ module.exports = (client)=>{
             client.on("message", function(message) {
                 if(!message.author.bot){       
                     if(message.content===prefix+"avatar"){
-                        message.reply(message.author.displayAvatarURL());
+                        const exampleEmbed = new Discord.MessageEmbed()
+                        .setColor('#4284f3')
+                        .setTitle('[Avatar]')
+                        .setURL('https://discordapp.com/channels/502528973012467723/502529309358161933')
+                        .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/1584471129028.png')
+                        .setDescription(message.author.displayAvatarURL())
+                        //.setThumbnail(user.displayAvatarURL())
+                        .setTimestamp()
+                        .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
+                        message.channel.send(exampleEmbed)
                     }
                 }
             })
