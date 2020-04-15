@@ -18,7 +18,7 @@ module.exports = (client)=>{
                         .setImage(message.author.displayAvatarURL())
                         //.setThumbnail(user.displayAvatarURL())
                         .setTimestamp()
-                        .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
+                        .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
                         message.channel.send(exampleEmbed)
                     }
                 }

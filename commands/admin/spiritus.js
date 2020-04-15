@@ -20,7 +20,7 @@ module.exports = (client)=>{
                         .setDescription(`**__Voici mes commandes :__**\r\n\r\n${g4} **${prefix}commandes**\r\nLa liste des commandes du BOT\r\n\r\n ${g4}**${prefix}m @User#0000 message **\r\nPour envoyer un message privé à une personne \r\n\r\n **!m #chanel message**\r\n Pour poster un message au nom du BOT dans un salon du serveur \r\n\r\n${g4}**${prefix}r message** \r\n Pour répondre à un message depuis le salon où se trouve la demande. \r\n\r\n${g4}**${prefix}close** \r\nPour  supprimer le salon que le BOT avait créé et clore la demande.\r\n\r\n${g4}**${prefix}add @User#0000 @role ** \r\nPour ajouter un role a une personne\r\n\r\n${g4}**${prefix}rem @User#0000 @role ** \r\nPour supprimer le role d\'une personne.`)
                         //.setThumbnail(user.displayAvatarURL())
                         .setTimestamp()
-                        .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
+                        .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
                         message.channel.send(exampleEmbed)
                         }
                     }
