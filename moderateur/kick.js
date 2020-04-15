@@ -1,6 +1,7 @@
 
 module.exports = (client)=>{
     const adminId ='675415572703346693'
+    const Discord =require('discord.js');
 
     const prefix = '!'
 
