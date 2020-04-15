@@ -14,7 +14,8 @@ module.exports = (client)=>{
                         .setTitle('[Commandes]')
                         .setURL('https://discordapp.com/channels/502528973012467723/502529309358161933')
                         .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/1584471129028.png')
-                        .setDescription(`__**Voici les commandes enregistrer :**__\r\n 
+                        .setDescription(`
+                        __**Voici les commandes enregistrer :**__\r\n 
                         ${fleche} **Les réseaux sociaux**\r\n 
                         ${g4} **${prefix}fb** Donne le lien de notre page facebook
                         ${g4} **${prefix}twitter** Donne le lien de notre page twitter
@@ -24,7 +25,8 @@ module.exports = (client)=>{
                         ${fleche} **Les commandes**\r\n 
                         ${g4} **${prefix}avatar** montre votre avatar au grand format
                         ${g4} **${prefix}pileouface** faites jouer le hasard !
-                        ${g4} **${prefix}dés** lance un dés a 6 faces`)
+                        ${g4} **${prefix}dés** lance un dés a 6 faces
+                        `)
                         //.setThumbnail(user.displayAvatarURL())
                         .setTimestamp()
                         .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
