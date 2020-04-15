@@ -5,6 +5,8 @@ module.exports = (client)=>{
             let fleche = client.emojis.cache.find(emoji => emoji.name === "fleche");
             let g4 = client.emojis.cache.find(emoji => emoji.name === "g4");
             const prefix = '!'
+            const adminId ='675415572703346693'
+
 
             client.on("message", function(message) {
                 if(!message.author.bot){       

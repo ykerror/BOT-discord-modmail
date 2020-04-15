@@ -23,6 +23,8 @@ client.on('ready',()=> require('./commands/public/reseaux.js')(client));
 client.on('ready',(message)=> require('./moderateur/addrole.js')(client,message));
 client.on('ready',(message)=> require('./moderateur/remrole.js')(client,message));
 client.on('ready',(message)=> require('./commands/message.js')(client,message));
+client.on('ready',()=> require('./commands/admin/spiritus.js')(client));
+
 
 
 
