@@ -9,12 +9,7 @@ module.exports = (client)=>{
             client.on("message", function(message) {
                 if(!message.author.bot){       
                     if(message.content===prefix+"avatar"){
-                        if(typeof message.mentions.users.first() !== 'undefined') {
-                            //let user_m = message.mentions.users.first()
-                            message.reply(message.mentions.users.first().displayAvatarURL());
-
-                        }
-                        
+                        message.reply(message.author.displayAvatarURL());
                     }
                 }
             })

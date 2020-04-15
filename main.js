@@ -13,6 +13,8 @@ const client = new Client({disableEveryone: true});
 client.commands = new Collection();
 
 
+client.on('ready',()=> require('./moderateur/kick.js')(client));
+client.on('ready',()=> require('./moderateur/ban.js')(client));
 client.on('ready',()=> require('./commands/public/ping.js')(client));
 client.on('ready',()=> require('./commands/public/avatar.js')(client));
 client.on('ready',()=> require('./commands/public/general.js')(client));
