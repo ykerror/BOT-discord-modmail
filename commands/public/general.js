@@ -2,9 +2,7 @@ module.exports = (client)=>{
     const prefix = '!'
     client.on("message", function(message) {
         if(!message.author.bot){       
-        if(message.content===prefix+"avatar"){
-            message.reply(message.author.displayAvatarURL());
-        }
+       
         if(message.content==="!guilem"){
             let bon = client.emojis.cache.find(emoji => emoji.name === "bon");
             message.channel.send('<@345943442817286146> : miam miam les couilles de noval sont délicieuses !')
