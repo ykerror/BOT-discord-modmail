@@ -2,6 +2,7 @@
 module.exports = (client)=>{
     const adminId ='675415572703346693'
     const Discord =require('discord.js');
+    const channellogs = '697507654410567741'
 
     const prefix = '!'
 
@@ -30,7 +31,7 @@ module.exports = (client)=>{
                                 .setTimestamp()
                                 .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
                             
-                                message.guild.channels.cache.get("697507654410567741").send(exampleEmbed);
+                                message.guild.channels.cache.get(channellogs).send(exampleEmbed);
                                 }).catch(() => {
                                     message.channel.send("Une erreur s'est produite  :(\r\n Merci de réessayer");
                                 });

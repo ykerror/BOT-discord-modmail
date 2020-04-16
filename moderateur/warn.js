@@ -2,7 +2,7 @@
 module.exports = (client)=>{
     const adminId ='675415572703346693'
     const Discord =require('discord.js');
-
+    const channellogs = '697507654410567741'
     const prefix = '!'
 
         client.on("message", function(message) {
@@ -32,7 +32,7 @@ module.exports = (client)=>{
                         .setTimestamp()
                         .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
                     
-                        message.guild.channels.cache.get("695688539588919346").send(exampleEmbed);
+                        message.guild.channels.cache.get(channellogs).send(exampleEmbed);
                         }
                     }     
                 }
