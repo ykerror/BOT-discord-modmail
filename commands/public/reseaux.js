@@ -7,7 +7,7 @@ module.exports = (client)=>{
         if(message.content===prefix+"insta"){
             const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#f8b301')
-            .setTitle('[Réseaux sociaux]').color('#f8b301')
+            .setTitle('[Réseaux sociaux]')
             .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/1584471129028.png')
             .setDescription('Voici le lien de notre page instagram : \r\n  https://www.instagram.com/french_gaming_family ')
             //.setThumbnail(user.displayAvatarURL())
