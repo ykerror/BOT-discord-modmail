@@ -15,9 +15,9 @@ module.exports = (client)=>{
              //console.log(nombreAleatoire);
             var reponse;
             if(nombreAleatoire == 1){
-            message.channel.send("pile")
+            message.channel.send("Pile")
             } else {
-            message.channel.send("face")
+            message.channel.send("Face")
             }
         }
         
