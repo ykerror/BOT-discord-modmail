@@ -29,9 +29,8 @@ client.on("message", function(message) {
                 
                 memberAdd.roles.add(roleAdd).catch(console.error)
             }
+          }
         }
-    }
-}
-});
-
+      }
+    });
 }

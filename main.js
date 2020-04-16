@@ -1,33 +1,34 @@
 const {Client, Collection}=require('discord.js');
 const client = new Client({disableEveryone: true});
-    const idServeur = '675374925527252993'
-    const categorieDemandes ='695593316041097247'
-    const logsDemandes ='697507654410567741'
-    const adminId ='675415572703346693'
-    const prefix ='!'
-    const app = require('express')();
-    const server = require('http').createServer(app);
-
+const app = require('express')();
+const server = require('http').createServer(app);
+// ***************************************************************************************************
+// ======================================= AU LANCEMENT DU BOT =======================================
+// ***************************************************************************************************
 
 
 client.commands = new Collection();
 
-
-client.on('ready',()=> require('./moderateur/kick.js')(client));
-client.on('ready',()=> require('./moderateur/ban.js')(client));
+// ***************************************************************************************************
+// ============================================== PUBLIC =============================================
+// ***************************************************************************************************
 client.on('ready',()=> require('./commands/public/ping.js')(client));
 client.on('ready',()=> require('./commands/public/avatar.js')(client));
 client.on('ready',()=> require('./commands/public/general.js')(client));
 client.on('ready',()=> require('./commands/public/commandes.js')(client));
 client.on('ready',()=> require('./commands/public/reseaux.js')(client));
+// ***************************************************************************************************
+// ============================================== ADMIN ==============================================
+// ***************************************************************************************************
 client.on('ready',(message)=> require('./moderateur/addrole.js')(client,message));
 client.on('ready',(message)=> require('./moderateur/remrole.js')(client,message));
 client.on('ready',(message)=> require('./commands/message.js')(client,message));
 client.on('ready',()=> require('./commands/admin/spiritus.js')(client));
-
-
-
-
+client.on('ready',()=> require('./moderateur/kick.js')(client));
+client.on('ready',()=> require('./moderateur/ban.js')(client));
+// ***************************************************************************************************
+// ============================================== EVENTS =============================================
+// ***************************************************************************************************
 client.on('ready',()=> require('./events/ready.js')(client));
 client.on('guildMemberAdd',(member)=>require('./events/guildMemberAdd.js')(client,member));
 client.on('guildMemberRemove',(member)=>require('./events/guildMemberRemove.js')(client,member));
