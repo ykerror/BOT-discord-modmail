@@ -1,8 +1,6 @@
 
 module.exports = (client)=>{
     const Discord =require('discord.js');
-   // const user = message.author
-    let fleche = client.emojis.cache.find(emoji => emoji.name === "fleche");
     let g4 = client.emojis.cache.find(emoji => emoji.name === "g4");
     const prefix = '!'
 
@@ -14,7 +12,7 @@ module.exports = (client)=>{
                         .setTitle('[Avatar]')
                         .setURL('https://discordapp.com/channels/502528973012467723/502529309358161933')
                         .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/1584471129028.png')
-                        .setDescription('Voici votre avatar !')
+                        .setDescription(`${g4}Voici votre avatar !`)
                         .setImage(message.author.displayAvatarURL())
                         //.setThumbnail(user.displayAvatarURL())
                         .setTimestamp()
