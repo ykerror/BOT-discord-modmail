@@ -51,8 +51,7 @@ module.exports = (client)=>{
         if(message.content===prefix+"youtube"){
             const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#f8b301')
-            .setTitle('[Réseaux]')
-            .setURL('https://discordapp.com/channels/502528973012467723/502529309358161933')
+            .setTitle('[Réseaux sociaux]')
             .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/1584471129028.png')
             .setDescription('Voici le lien de notre utip  : \r\n  https://www.youtube.com/channel/UCAKPauxXArnTWn9WuYldY-Q ')
             //.setThumbnail(user.displayAvatarURL())
