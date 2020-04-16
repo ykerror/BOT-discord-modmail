@@ -5,20 +5,19 @@ module.exports = (client)=>{
 
     const prefix = '!'
 
-            client.on("message", function(message) {
-                if(!message.author.bot){       
-                    if (message.content.startsWith("$kick")) {
-                        if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
-
+        client.on("message", function(message) {
+            if(!message.author.bot){       
+                if (message.content.startsWith("$kick")) {
+                    if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
                         if(typeof message.mentions.members.first() !== "undefined"){
-                            let user = message.mentions.users.first()
-                            let arrayMsg = message.content.split(/ +/g)
+                                let user = message.mentions.users.first()
+                                let arrayMsg = message.content.split(/ +/g)
                                 arrayMsg.shift()
                                 arrayMsg.shift()
                                 let content = arrayMsg.join(" ")
-                            user.send("**KICK : **\r\nSuite au non-respect du règlement la sanction kick a été prise a votre encontre :\r\n\r\nModérateur :"+message.author.tag+"\r\n\r\nRaison :\r\n"+content).then(msg => {
+                                user.send("**KICK : **\r\nSuite au non-respect du règlement la sanction kick a été prise a votre encontre :\r\n\r\nModérateur :"+message.author.tag+"\r\n\r\nRaison :\r\n"+content).then(msg => {
                                 message.delete()
-                            })
+                                })
                                 var member= message.mentions.members.first();
                                 member.kick().then((member) => {
                                     const exampleEmbed = new Discord.MessageEmbed()
@@ -33,7 +32,7 @@ module.exports = (client)=>{
                             
                                 message.guild.channels.cache.get("697507654410567741").send(exampleEmbed);
                                 }).catch(() => {
-                                    message.channel.send("Une erreur s'est produite  :(\r\n Merci de réessayer, si le problème persiste merci de contacter Smaug#6739");
+                                    message.channel.send("Une erreur s'est produite  :(\r\n Merci de réessayer");
                                 });
                         }else{
                             message.reply('Vous n\'avez pas mentionner de personne a kick :cry:')
@@ -41,7 +40,7 @@ module.exports = (client)=>{
                     }
                 }
 
-                }
-            })
+            }
+        })
     
 }
