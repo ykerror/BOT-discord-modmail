@@ -5,10 +5,10 @@ module.exports = (client) => {
         client.on("message", function(message) {
             if(!message.author.bot) {
 
-                if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
             
                     if(message.content.startsWith(prefix+'warn')){
-            
+                      if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
+
                         if(message.mentions.users.first() !== 'undefined') {
                             
                             let user = message.mentions.users.first()
