@@ -17,7 +17,8 @@ module.exports = (client)=>{
                         arrayMsg.shift()
                         arrayMsg.shift()
                         let content = arrayMsg.join(" ")
-                        user.send("**AVERTISSEMENT : **\r\nSuite au non-respect du règlement la sanction avertissement a été prise a votre encontre :\r\n\r\nModérateur :"+message.author.tag+"\r\n\r\nRaison :\r\n"+content).then(msg => {
+                        let attention = client.emojis.cache.find(emoji => emoji.name === "attention");
+                        user.send(`**__${attention}Avertissement de l'équipe de modération de la FGF :__**\r\n\r\nModérateur : L'equipe du staff \r\n\r\n**__Motif :__** \r\n`+content).then(msg => {
                             message.delete()
                         })
                         .catch(console.error);
