@@ -9,6 +9,7 @@ module.exports = (client,message) => {
                     if(isNaN(count))return message.channel.send('Veuillez indiquer un nombre valide')
                     if(count < 1 || count > 100)return message.channel.send('Veuillez indiquer un nombre compris entre 0 et 100')
                     message.channel.bulkDelete(parseInt(count) + 1)
+                  
                 }
             } 
         })
