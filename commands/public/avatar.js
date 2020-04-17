@@ -11,12 +11,12 @@ module.exports = (client)=>{
                         .setColor('#4284f3')
                         .setTitle('[Avatar]')
                         .setURL('https://discordapp.com/channels/502528973012467723/502529309358161933')
-                        .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/1584471129028.png')
+                        .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/spiritusavatar.png')
                         .setDescription(`${g4}Voici votre avatar !`)
                         .setImage(message.author.displayAvatarURL())
                         //.setThumbnail(user.displayAvatarURL())
                         .setTimestamp()
-                        .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/1585873893041.png');
+                        .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
                         message.channel.send(exampleEmbed)
                     }
                 }

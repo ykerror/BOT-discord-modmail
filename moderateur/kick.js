@@ -25,11 +25,11 @@ module.exports = (client)=>{
                                 .setColor('#0099ff')
                                 .setTitle('[KICK]')
                                 .setURL('https://discordapp.com/channels/502528973012467723/679739057684742160')
-                                .setAuthor('Module de modération', 'https://french-gaming-family.fr/public/1584471129028.png')
+                                .setAuthor('Module de modération', 'https://french-gaming-family.fr/public/spiritusavatar.png')
                                 .setDescription('__**Raison du KICK :**__\r\n'+content)
                                 .setThumbnail(user.displayAvatarURL())
                                 .setTimestamp()
-                                .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
+                                .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logo.png');
                             
                                 message.guild.channels.cache.get(channellogs).send(exampleEmbed);
                                 }).catch(() => {

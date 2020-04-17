@@ -26,11 +26,11 @@ module.exports = (client)=>{
                                 .setColor('#0099ff')
                                 .setTitle('[BAN]')
                                 .setURL('https://discordapp.com/channels/502528973012467723/679739057684742160')
-                                .setAuthor('Module de modération', 'https://french-gaming-family.fr/public/1584471129028.png')
+                                .setAuthor('Module de modération', 'https://french-gaming-family.fr/public/spiritusavatar.png')
                                 .setDescription('__**Raison du BAN :**__\r\n'+content)
                                 .setThumbnail(user.displayAvatarURL())
                                 .setTimestamp()
-                                .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/imgA.png');
+                                .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
                             
                                 message.guild.channels.cache.get("697507654410567741").send(exampleEmbed);
                                 }).catch(() => {
