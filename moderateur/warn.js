@@ -1,9 +1,11 @@
 module.exports = (client,message) => {
-    const prefix = '!'
+    const prefix = '$'
+    const Discord = require('discord.js')
+    const adminId = '675415572703346693'
         client.on("message", function(message) {
             if(!message.author.bot) {
 
-                if(message.member.roles.cache.get(StaffId)) { // Si l'utilisateur est bien admin
+                if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
             
                     if(message.content.startsWith(prefix+'warn')){
             
