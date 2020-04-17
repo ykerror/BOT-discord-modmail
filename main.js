@@ -26,7 +26,7 @@ client.on('ready',(message)=> require('./commands/message.js')(client,message));
 client.on('ready',()=> require('./commands/admin/spiritus.js')(client));
 client.on('ready',()=> require('./moderateur/kick.js')(client));
 client.on('ready',()=> require('./moderateur/ban.js')(client));
-client.on('ready',()=> require('./moderateur/warn.js')(client));
+
 // ***************************************************************************************************
 // ============================================== EVENTS =============================================
 // ***************************************************************************************************
