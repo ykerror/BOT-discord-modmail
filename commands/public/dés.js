@@ -1,5 +1,6 @@
 module.exports = (client,message) => {
     const prefix = '!'
+    const  Discord = require('discord.js')
         client.on("message", function(message) {
             if(message.content.startsWith(prefix+'roll')){
                 let args = message.content.trim().split(/ +/g)
