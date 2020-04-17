@@ -1,4 +1,4 @@
-module.exports = (client,message) => {
+module.exports = (client) => {
     const prefix = '$'
     const Discord = require('discord.js')
     const adminId = '675415572703346693'
