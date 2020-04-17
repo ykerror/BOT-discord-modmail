@@ -4,7 +4,7 @@ module.exports = (client)=>{
     const Discord =require('discord.js');
     const channellogs = '697507654410567741'
 
-    const prefix = '!'
+    const prefix = '$'
 
         client.on("message", function(message) {
             if(!message.author.bot){       
