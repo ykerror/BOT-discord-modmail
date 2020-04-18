@@ -42,7 +42,7 @@ module.exports = (client)=>{
             .setColor('#f8b301')
             .setTitle('[Soutiens]')
             .setAuthor('Module de commandes', 'https://french-gaming-family.fr/public/spiritusavatar.png')
-            .setDescription('Voici le lien de notre utip  : \r\n  https://www.utip.io/fgfunited \r\n Un grand merci a toi ce soutiens nous aide vraiment donc un grand merci pour cela ! :heart:')
+            .setDescription('Voici le lien de notre utip  : \r\n  https://www.utip.io/fgfunited \r\n Un grand merci a toi ! :heart:')
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
