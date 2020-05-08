@@ -24,6 +24,12 @@ module.exports = (client)=>{
                         message.channel.send(exampleEmbed)
                         }
                     }
+                    if(message.content===prefix+"raid"){
+                        if(message.member.roles.cache.get(adminId)) {
+                           let salon = message.channel
+                            message.channels.cache.get('700417951928549456').send('La commande raid a été utiliser ! '+salon)
+                        }
+                    }
                 }
             })
     
