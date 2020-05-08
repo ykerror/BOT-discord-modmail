@@ -14,6 +14,6 @@ module.exports = (client, member)=>{
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
-            message.guild.channel.cache.get(departChanel).send(exampleEmbed)
+            member.guild.channels.cache.get(departChanel).send(exampleEmbed)
         
 }
