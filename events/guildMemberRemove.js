@@ -8,7 +8,7 @@ module.exports = (client, member)=>{
             .setTitle('Member left')
             .setAuthor('Module d\'evenement', 'https://french-gaming-family.fr/public/spiritusavatar.png')
             .setDescription("**" + user.tag +"** vient de nous quitter. A bientôt l'ami ! :wave:")
-            .setImage(message.author.displayAvatarURL())
+            .setImage(user.displayAvatarURL())
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
