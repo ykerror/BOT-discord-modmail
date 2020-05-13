@@ -1,6 +1,6 @@
 module.exports = (client, member)=>{
         const Discord =require('discord.js');
-        const {BYECHANNEL} =require('./../../config.js');
+        const {BYECHANNEL} =require('./../config.js');
 
         user = member.user
 

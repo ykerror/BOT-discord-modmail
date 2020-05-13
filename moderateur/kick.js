@@ -1,15 +1,16 @@
 
 module.exports = (client)=>{
-    const adminId ='675415572703346693'
+    //const adminId ='675415572703346693'
     const Discord =require('discord.js');
-    const channellogs = '697507654410567741'
+    //const channellogs = '697507654410567741'
+    const {ADMINID,PREFIX,LOGSSANCTIONS} =require('./../config.js');
 
     const prefix = '$'
 
         client.on("message", function(message) {
             if(!message.author.bot){       
-                if (message.content.startsWith("$kick")) {
-                    if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
+                if (message.content.startsWith(PREFIX+"kick")) {
+                    if(message.member.roles.cache.get(ADMINID)) { // Si l'utilisateur est bien admin
                         if(typeof message.mentions.members.first() !== "undefined"){
                                 let user = message.mentions.users.first()
                                 let arrayMsg = message.content.split(/ +/g)
@@ -31,7 +32,7 @@ module.exports = (client)=>{
                                 .setTimestamp()
                                 .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logo.png');
                             
-                                message.guild.channels.cache.get(channellogs).send(exampleEmbed);
+                                message.guild.channels.cache.get(LOGSSANCTIONS).send(exampleEmbed);
                                 }).catch(() => {
                                     message.channel.send("Une erreur s'est produite  :(\r\n Merci de réessayer");
                                 });

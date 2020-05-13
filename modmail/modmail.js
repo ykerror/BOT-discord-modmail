@@ -15,7 +15,7 @@ client.on("ready", () => {
     const logsDemandes ='697507654410567741'
     const adminId ='675415572703346693'
     const prefix ='!'*/
-    const {SERVERID,CATEGORIEDEMANDES,LOGSDEMANDES,ADMINID,PREFIX} =require('./../../config.js');
+    const {SERVERID,CATEGORIEDEMANDES,LOGSDEMANDES,ADMINID,PREFIX} =require('./../config.js');
 
 
 // ***************************************************************************************************

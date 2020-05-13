@@ -1,13 +1,15 @@
 
 module.exports = (client)=>{
-    const adminId ='675415572703346693'
+   // const adminId ='675415572703346693'
     const Discord =require('discord.js');
-    const prefix = '$'
+    //const prefix = '$'
+    const {ADMINID,PREFIX} =require('./../config.js');
+
 
         client.on("message", function(message) {
             if(!message.author.bot){       
-                if (message.content.startsWith("$ban")) {
-                    if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
+                if (message.content.startsWith(PREFIX+"ban")) {
+                    if(message.member.roles.cache.get(ADMINID)) { // Si l'utilisateur est bien admin
                         if(typeof message.mentions.members.first() !== "undefined"){
 
                                 let user = message.mentions.users.first()

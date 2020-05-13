@@ -1,5 +1,5 @@
 module.exports = (client, member)=>{
-        const {BIENVENUECHANNEL} =require('./../../config.js');
+        const {BIENVENUECHANNEL} =require('./../config.js');
 
         NewUser = member.user;
         let attention = client.emojis.cache.find(emoji => emoji.name === "attention");

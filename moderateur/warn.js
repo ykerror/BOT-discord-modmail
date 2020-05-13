@@ -1,14 +1,15 @@
 module.exports = (client)=>{
-    const staffId ='675415572703346693'
+    //const staffId ='675415572703346693'
     const Discord =require('discord.js');
-    const channellogs = '697507654410567741'
-    const prefix = '$'
+    //const channellogs = '697507654410567741'
+    //const prefix = '$'
+    const {ADMINID,PREFIX,LOGSSANCTIONS} =require('./../config.js');
 
         client.on("message", function(message) {
             if(!message.author.bot){
 
-                    if(message.content.startsWith(prefix+'warn')){
-                        if(message.member.roles.cache.get(staffId)) { // Si l'utilisateur est bien admin
+                    if(message.content.startsWith(PREFIX+'warn')){
+                        if(message.member.roles.cache.get(ADMINID)) { // Si l'utilisateur est bien admin
 
                         if(message.mentions.users.first() !== 'undefined') {
                         
@@ -32,7 +33,7 @@ module.exports = (client)=>{
                         .setTimestamp()
                         .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
                     
-                        message.guild.channels.cache.get(channellogs).send(exampleEmbed);
+                        message.guild.channels.cache.get(LOGSSANCTIONS).send(exampleEmbed);
                         }
                     }     
                 }
