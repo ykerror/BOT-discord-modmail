@@ -3,10 +3,11 @@ module.exports = (client,message)=>{
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
 // ***************************************************************************************************
+const {MESSAGESTATUS} = require('./../config.js');
 client.on("ready", () => {
     client.user.setPresence({
         activity: {
-            name: 'MP moi pour de l\'aide !'
+            name: MESSAGESTATUS
         }
     });
 })
@@ -25,7 +26,7 @@ client.on("message", function(message) {
     
     client.user.setPresence({
         activity: {
-            name: 'MP moi pour de l\'aide !'
+            name: MESSAGESTATUS
         }
     });
    

@@ -1,6 +1,6 @@
 exports.PREFIX ='!';
 exports.STATUS ='dnd';
-exports.MESSAGESTATUS ='';
+exports.MESSAGESTATUS ='MP moi pour de l\'aide :)';
 exports.ADMINID ='675415572703346693';
 exports.SERVERID ='675374925527252993';
 exports.BIENVENUECHANNEL ='688411985347477538';
