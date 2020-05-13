@@ -1,8 +1,9 @@
 module.exports = (client,message) => {
-    const prefix = '!'
+    const {PREFIX} =require('./../../config.js');
+
     const  Discord = require('discord.js')
         client.on("message", function(message) {
-            if(message.content.startsWith(prefix+'roll')){
+            if(message.content.startsWith(PREFIX+'roll')){
                 let args = message.content.trim().split(/ +/g)
                 let nb_dés = args[1]
                 let count = args[2] 

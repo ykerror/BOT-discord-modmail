@@ -1,10 +1,10 @@
 module.exports = (client)=>{
-    const prefix = '!'
     const Discord =require('discord.js');
+    const {PREFIX} =require('./../../config.js');
 
 
     client.on("message", function(message) {
-        if(message.content===prefix+"insta"){
+        if(message.content===PREFIX+"insta"){
             const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#f8b301')
             .setTitle('[Réseaux sociaux]')
@@ -15,7 +15,7 @@ module.exports = (client)=>{
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
             message.channel.send(exampleEmbed)
         }
-        if(message.content===prefix+"fb"){
+        if(message.content===PREFIX+"fb"){
             const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#f8b301')
             .setTitle('[Réseaux sociaux]')
@@ -26,7 +26,7 @@ module.exports = (client)=>{
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
             message.channel.send(exampleEmbed)  
         }
-        if(message.content===prefix+"twitter"){
+        if(message.content===PREFIX+"twitter"){
             const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#f8b301')
             .setTitle('[Réseaux sociaux]')
@@ -37,7 +37,7 @@ module.exports = (client)=>{
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
             message.channel.send(exampleEmbed)    
         }
-        if(message.content===prefix+"utip"){
+        if(message.content===PREFIX+"utip"){
             const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#f8b301')
             .setTitle('[Soutiens]')
@@ -48,7 +48,7 @@ module.exports = (client)=>{
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
             message.channel.send(exampleEmbed)  
         }
-        if(message.content===prefix+"youtube"){
+        if(message.content===PREFIX+"youtube"){
             const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#f8b301')
             .setTitle('[Réseaux sociaux]')

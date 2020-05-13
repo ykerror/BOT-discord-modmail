@@ -16,7 +16,7 @@ client.on('ready',()=> require('./commands/public/ping.js')(client));
 client.on('ready',()=> require('./commands/public/avatar.js')(client));
 client.on('ready',()=> require('./commands/public/general.js')(client));
 client.on('ready',()=> require('./commands/public/commandes.js')(client));
-client.on('ready',()=> require('./commands/public/reseaux.js')(client));
+//client.on('ready',()=> require('./commands/public/reseaux.js')(client));
 client.on('ready',()=> require('./commands/public/dés.js')(client));
 
 // ***************************************************************************************************
