@@ -1,6 +1,6 @@
 module.exports = (client)=>{
    
-    const {PREFIX,ADMINID} =require('./../../config.js');
+    const {PREFIX,ADMINID} =require('./../config.js');
 
 
 
