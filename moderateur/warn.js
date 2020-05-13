@@ -2,7 +2,7 @@ module.exports = (client)=>{
     //const staffId ='675415572703346693'
     const Discord =require('discord.js');
     //const channellogs = '697507654410567741'
-    //const prefix = '$'
+    //const prefix = '$' 
     const {ADMINID,PREFIX,LOGSSANCTIONS} =require('./../config.js');
 
         client.on("message", function(message) {
