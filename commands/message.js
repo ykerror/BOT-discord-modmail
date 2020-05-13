@@ -2,8 +2,6 @@ module.exports = (client)=>{
    
     const {PREFIX,ADMINID} =require('./../config.js');
 
-
-
     client.on("message", function(message) {
                 if(message.content.startsWith(PREFIX+'m')){
                     if(message.member.roles.cache.get(ADMINID)) { // Si l'utilisateur est bien admin
