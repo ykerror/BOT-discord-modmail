@@ -1,16 +1,12 @@
 module.exports = (client)=>{
-    const prefix = '!'
+    const {PREFIX} =require('./../../config.js');
+
     client.on("message", function(message) {
         if(!message.author.bot){       
        
-        if(message.content==="!guilem"){
-            let bon = client.emojis.cache.find(emoji => emoji.name === "bon");
-            message.channel.send('<@345943442817286146> : miam miam les couilles de noval sont délicieuses !')
-            message.channel.send(`${bon}`)
-
-        }
         
-        if(message.content===prefix+"pileouface"){
+        
+        if(message.content===PREFIX+"pileouface"){
             var nombreAleatoire = Math.round(Math.random()*1);
              //console.log(nombreAleatoire);
             var reponse;
@@ -21,7 +17,7 @@ module.exports = (client)=>{
             }
         }
         
-        if(message.content===prefix+'dés'){
+        if(message.content===PREFIX+'dés'){
             function entierAleatoire(min, max)
             {
             return Math.floor(Math.random() * (max - min + 1)) + min;

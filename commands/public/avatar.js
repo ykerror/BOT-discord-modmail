@@ -2,11 +2,12 @@
 module.exports = (client)=>{
     const Discord =require('discord.js');
     let g4 = client.emojis.cache.find(emoji => emoji.name === "g4");
-    const prefix = '!'
+    const {PREFIX} =require('./../../config.js');
+
 
             client.on("message", function(message) {
                 if(!message.author.bot){       
-                    if(message.content===prefix+"avatar"){
+                    if(message.content===PREFIX+"avatar"){
                         const exampleEmbed = new Discord.MessageEmbed()
                         .setColor('#4284f3')
                         .setTitle('[Avatar]')
