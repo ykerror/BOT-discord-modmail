@@ -1,6 +1,6 @@
-module.exports = ()=>{
+module.exports = (client)=>{
         const {STATUS,MESSAGESTATUS} = require('./../config.js');
-        //console.log(`${client.user.username} is online!`);
+        console.log(`${client.user.username} is online!`);
         client.user.setStatus(STATUS);
         client.user.setActivity(MESSAGESTATUS)
          
