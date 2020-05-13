@@ -1,7 +1,8 @@
 module.exports = (client, member)=>{
-        const departChanel = '675374925527253002'
-        user = member.user
         const Discord =require('discord.js');
+        const {BYECHANNEL} =require('./../../config.js');
+
+        user = member.user
 
        // member.guild.channels.cache.get(departChanel).send("**" + user.tag +"** vient de nous quitter. A bientôt l'ami ! :wave:");
 
@@ -14,6 +15,6 @@ module.exports = (client, member)=>{
             //.setThumbnail(user.displayAvatarURL())
             .setTimestamp()
             .setFooter('Smaug et Tikad devellopers officiels du BOT', 'https://french-gaming-family.fr/public/logoFGF.png');
-            member.guild.channels.cache.get(departChanel).send(exampleEmbed)
+            member.guild.channels.cache.get(BYECHANNEL).send(exampleEmbed)
         
 }

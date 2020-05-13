@@ -1,4 +1,4 @@
 module.exports = ()=>{
-        console.log('Je suis pret')
+        console.log('BOT démarer avec succès')
     
 }
