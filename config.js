@@ -1,3 +1,5 @@
 exports.PREFIX ='!';
 exports.STATUS ='dnd';
 exports.MESSAGESTATUS ='';
+exports.ADMINID ='675415572703346693';
+exports.SERVERID ='675374925527252993';
