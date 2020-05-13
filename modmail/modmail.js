@@ -10,11 +10,12 @@ client.on("ready", () => {
         }
     });
 })
-    const idServeur = '675374925527252993'
+    /*const idServeur = '675374925527252993'
     const categorieDemandes ='695593316041097247'
     const logsDemandes ='697507654410567741'
     const adminId ='675415572703346693'
-    const prefix ='!'
+    const prefix ='!'*/
+    const {SERVERID,CATEGORIEDEMANDES,LOGSDEMANDES,ADMINID,PREFIX} =require('./../../config.js');
 
 
 // ***************************************************************************************************
@@ -36,11 +37,11 @@ client.on("message", function(message) {
             
             if(!message.author.bot) { // Si l'auteur du message n'est pas un bot
 
-                var server = client.guilds.cache.get(idServeur);
+                var server = client.guilds.cache.get(SERVERID);
                 var name = message.author.username+"#"+message.author.discriminator;
                 var channelName = message.author.username+message.author.discriminator;
-                var user = client.guilds.cache.get(idServeur).members.cache.get(message.author.id)
-                var category = server.channels.cache.get(categorieDemandes)
+                var user = client.guilds.cache.get(SERVERID).members.cache.get(message.author.id)
+                var category = server.channels.cache.get(CATEGORIEDEMANDES)
                 var exists = false;
                 var chanId;
 
@@ -63,7 +64,7 @@ client.on("message", function(message) {
                         chan.setParent(category.id).then(e => { // On met le nouveau channel dans la bonne catégorie
                             
                             chan.updateOverwrite(chan.guild.roles.everyone, { VIEW_CHANNEL: false }).then(i => { // On interdit a tout le monde de voir le channel
-                                let role = chan.guild.roles.cache.get(adminId)
+                                let role = chan.guild.roles.cache.get(ADMINID)
                                 let date = new Date()
                                 let now = ((date.getDate() < 10) ? "0"+date.getDate() : date.getDate())+"/"+((date.getMonth() < 10) ? "0"+date.getMonth() : date.getMonth())+"/"+date.getFullYear()+" à "+date.getHours()+":"+date.getMinutes()
                                 chan.send("<@&"+role.id+"> Nouvelle demande de {"+message.author.id+"} ** "+name+" ** le "+now+" :\r\n"+message.content)
@@ -100,7 +101,7 @@ client.on("message", function(message) {
             
             if(!message.author.bot) { // Si l'utilisateur n'est pas un bot
                 
-                if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
+                if(message.member.roles.cache.get(ADMINID)) { // Si l'utilisateur est bien admin
 
                     var name = "Admin";
                     const mess = message.content.split(/ +/g);
@@ -114,14 +115,14 @@ client.on("message", function(message) {
                     switch(command) {
 
                     	// ---------------------------------- COMMANDES R -----------------------------------------
-                        case prefix+"r":
+                        case PREFIX+"r":
 
                             var oldMessage;
 
                             message.channel.messages.fetch()
                             .then(msgs => {
 
-                                let role = message.channel.guild.roles.cache.get(adminId)
+                                let role = message.channel.guild.roles.cache.get(ADMINID)
 
                                 if(!msgs.last().mentions.has(role)) {
 
@@ -164,9 +165,9 @@ client.on("message", function(message) {
                             break;
 
                         // ---------------------------------- COMMANDES CLOSE -----------------------------------------
-                        case prefix+"close":
+                        case PREFIX+"close":
                             
-                            if(message.channel.parent == client.guilds.cache.get(idServeur).channels.cache.get(categorieDemandes)){
+                            if(message.channel.parent == client.guilds.cache.get(SERVERID).channels.cache.get(CATEGORIEDEMANDES)){
                                 
                                 var oldMessage;
                                 var usr
@@ -176,7 +177,7 @@ client.on("message", function(message) {
                                 message.channel.messages.fetch()
                                 .then(msgs => {
 
-                                    let role = message.channel.guild.roles.cache.get(adminId)
+                                    let role = message.channel.guild.roles.cache.get(ADMINID)
 
                                     if(!msgs.last().mentions.has(role)) {
 
@@ -195,7 +196,7 @@ client.on("message", function(message) {
                                                 var newContent = newContentArray.join(":")
 
                                                 client.users.cache.get(userId).send("Demande traitée par un administrateur. Merci d'avoir fait appel à Spiritus, le bot relai de la FGF.\r\nPour une nouvelle requête, n'hésitez pas à  contacter de nouveau Spiritus.").then(msg => {
-                                                    client.guilds.cache.get(idServeur).channels.cache.get(logsDemandes).send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
+                                                    client.guilds.cache.get(SERVERID).channels.cache.get(LOGSDEMANDES).send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
                                                         message.channel.delete()
                                                     })
                                                     
@@ -217,7 +218,7 @@ client.on("message", function(message) {
                                         var newContent = newContentArray.join(":")
 
                                         client.users.cache.get(userId).send("Demande traitée par un administrateur. Merci d'avoir fait appel à Spiritus, le bot relai de la FGF.\r\nPour une nouvelle requête, n'hésitez pas à  contacter de nouveau Spiritus.").then(msg => {
-                                            client.guilds.cache.get(idServeur).channels.cache.get(logsDemandes).send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
+                                            client.guilds.cache.get(SERVERID).channels.cache.get(LOGSDEMANDES).send("@here Une nouvelle demande à été traitée :"+"\r\n**Demande de : **"+user.tag+"\r\n**Traitée par : **"+message.author.username+"\r\n**Contenu : **"+newContent+"\r\n**Le : **"+now+"\r\n**À : **"+hour).then(m => {
                                                 message.channel.delete()
                                             })
                                         })
