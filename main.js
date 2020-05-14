@@ -6,7 +6,6 @@ const server = require('http').createServer(app);
 // ======================================= AU LANCEMENT DU BOT =======================================
 // ***************************************************************************************************
 
-
 client.commands = new Collection();
 
 // ***************************************************************************************************
@@ -41,14 +40,6 @@ client.on('guildMemberRemove',(member)=>require('./events/guildMemberRemove.js')
 client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
 
 client.login(process.env.TOKEN)
-
-
-
-
-
-
-
-
 
 
 
