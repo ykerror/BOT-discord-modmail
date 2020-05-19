@@ -39,7 +39,7 @@ client.on('guildMemberAdd',(member)=>require('./events/guildMemberAdd.js')(clien
 client.on('guildMemberRemove',(member)=>require('./events/guildMemberRemove.js')(client,member));
 client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
 
-client.login(process.env.TOKEN)
+client.login('Njg5MjExODk5NzIzNjQ0OTI4.XsOOLQ.66k5atSEIcvIWQhacEPeag2-9Hw')
 
 
 
