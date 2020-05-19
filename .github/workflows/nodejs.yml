@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: pull
       run: |
-        cd /home/hector/Desktop/Delta
+        cd /home/BOT-1.0/Desktop/Delta
         git stash
         git pull origin master
         npm install
