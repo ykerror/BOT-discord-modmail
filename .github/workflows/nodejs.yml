@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: pull
       run: |
-        cd /home/BOT-1.0/Desktop/Delta
+        cd /home/BOT-1.0/.github/workflows
         git stash
         git pull origin master
         npm install
