@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: pull
       run: |
-        cd ../home/BOT-1.0
+        cd home/BOT-1.0
         git stash
         git pull origin master
         npm install
