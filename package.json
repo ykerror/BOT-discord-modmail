@@ -1,23 +1,23 @@
 {
-  "name": "bot-1.0",
+  "name": "fgf-spiritus",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SmaugDev/BOT-1.0.git"
+    "url": "git+https://github.com/SmaugDev/spiritus.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SmaugDev/BOT-1.0/issues"
+    "url": "https://github.com/SmaugDev/spiritus/issues"
   },
-  "homepage": "https://github.com/SmaugDev/BOT-1.0#readme",
+  "homepage": "https://github.com/SmaugDev/spiritus#readme",
   "dependencies": {
-    "discord.js": "^12.1.1",
+    "discord.js": "^12.2.0",
     "express": "^4.17.1"
   }
 }

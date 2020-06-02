@@ -1,10 +1,11 @@
 module.exports = (client)=>{
-   
-    const {PREFIX,ADMINID} =require('./../config.js');
+    const adminId ='503135942152945675'
+    const idServeur = '502528973012467723'
+    const prefix = '!'
 
     client.on("message", function(message) {
-                if(message.content.startsWith(PREFIX+'m')){
-                    if(message.member.roles.cache.get(ADMINID)) { // Si l'utilisateur est bien admin
+                if(message.content.startsWith(prefix+'m')){
+                    if(message.member.roles.cache.get(adminId)) { // Si l'utilisateur est bien admin
 
                     if(typeof message.mentions.channels.first() === 'undefined') {
 
