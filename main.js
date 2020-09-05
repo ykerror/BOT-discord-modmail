@@ -5,7 +5,7 @@ const server = require('http').createServer(app);
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
 // ***************************************************************************************************
- 
+ const {token} = require('./config.js')
 
 client.commands = new Collection();
 
@@ -30,17 +30,11 @@ client.on('ready',()=> require('./moderateur/ban.js')(client));
 client.on('ready',()=> require('./moderateur/warn.js')(client));
 client.on('ready',()=> require('./moderateur/clear.js')(client));
 
-
-//***************************************************************************************************
-// ============================================== EVENTS =============================================
-// ***************************************************************************************************
-client.on('ready',()=> require('./events/ready.js')(client));
-client.on('guildMemberAdd',(member)=>require('./events/guildMemberAdd.js')(client,member));
-client.on('guildMemberRemove',(member)=>require('./events/guildMemberRemove.js')(client,member));
 client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
 
-client.login('token')
+client.login(token)
 
+client.on('ready',()=> require('./events/ready.js')(client));
 
 
 server.listen(8080);
