@@ -4,4 +4,4 @@
 
 3) Remplacez le token et IDS du fichier `config.js`
 
-4) Utilisez la commande `node index.js` pour lancer le bot
+4) Utilisez la commande `node main.js` pour lancer le bot
