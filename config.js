@@ -1,3 +1,4 @@
+exports.token ='TOKEN de votre bot';
 exports.PREFIX ='!';
 exports.STATUS ='dnd';
 exports.MESSAGESTATUS ='MP moi pour de l\'aide :)';
