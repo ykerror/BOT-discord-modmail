@@ -1,7 +1,5 @@
 const {Client, Collection}=require('discord.js');
 const client = new Client({disableEveryone: true});
-const app = require('express')();
-const server = require('http').createServer(app);
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
 // ***************************************************************************************************
@@ -37,6 +35,5 @@ client.login(token)
 client.on('ready',()=> require('./events/ready.js')(client));
 
 
-server.listen(8080);
 
 
