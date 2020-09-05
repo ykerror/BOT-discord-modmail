@@ -30,7 +30,10 @@ client.on('ready',()=> require('./moderateur/clear.js')(client));
 
 client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
 
-client.login(token)
+const client = new Client({// ws: { intents: myIntents }
+  disableMentions : 'everyone',
+  ws: { intents: ['GUILDS','GUILD_MESSAGES','GUILD_MEMBERS','GUILD_EMOJIS','GUILD_WEBHOOKS','DIRECT_MESSAGES'] },
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
 client.on('ready',()=> require('./events/ready.js')(client));
 
