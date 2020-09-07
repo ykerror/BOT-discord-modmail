@@ -1,4 +1,8 @@
 const {Client, Collection}=require('discord.js');
+const client = new Client({// ws: { intents: myIntents }
+  disableMentions : 'everyone',
+  ws: { intents: ['GUILDS','GUILD_MESSAGES','GUILD_MEMBERS','GUILD_EMOJIS','GUILD_WEBHOOKS','DIRECT_MESSAGES'] },
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
 // ***************************************************************************************************
 // ======================================= AU LANCEMENT DU BOT =======================================
@@ -30,10 +34,6 @@ client.on('ready',()=> require('./moderateur/clear.js')(client));
 
 client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
 
-const client = new Client({// ws: { intents: myIntents }
-  disableMentions : 'everyone',
-  ws: { intents: ['GUILDS','GUILD_MESSAGES','GUILD_MEMBERS','GUILD_EMOJIS','GUILD_WEBHOOKS','DIRECT_MESSAGES'] },
-  partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
 client.on('ready',()=> require('./events/ready.js')(client));
 
