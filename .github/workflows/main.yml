@@ -17,7 +17,7 @@ jobs:
     - name: Bump version and push tag
       uses: TriPSs/conventional-changelog-action@master
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN_ACTION }}
+        github-token: ${{ github.token}}
         git-message: 'chore(release): {version}'
         preset: 'angular'
         tag-prefix: ''
