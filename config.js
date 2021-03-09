@@ -1,11 +1,15 @@
-exports.token ='TOKEN de votre bot';
-exports.PREFIX ='!';
-exports.STATUS ='dnd';
-exports.MESSAGESTATUS ='MP moi pour de l\'aide :)';
-exports.ADMINID ='675415572703346693';
-exports.SERVERID ='675374925527252993';
-exports.BIENVENUECHANNEL ='688411985347477538';
-exports.BYECHANNEL ='710162943710593134';
-exports.CATEGORIEDEMANDES ='710098940363538452';
-exports.LOGSDEMANDES ='710162803603800124';
-exports.LOGSSANCTIONS ='710167099326070815';
+module.exports = {
+    TOKEN : "Njg5MjExNjEwMzA0MzQ4MzMx.Xm_kVA.ooeKcYet5oPCaOMK0axo23Fqoqc",
+    PREFIX : "/",
+    emojis : {
+        success : '<a:check2:809702921113567263>',
+        error : '<a:croix2:809702921113567263>'
+    },
+    modmail : {
+        active : true,
+        guildId : "689192094149247087",
+        categoryId : "818218136133959690",
+        logsChannel : "818846800991617084"
+    },
+    statut : "DM me for help !"
+}

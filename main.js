@@ -1,42 +1,44 @@
-const {Client, Collection}=require('discord.js');
+const { Client, Collection, TextChannel } = require('discord.js');
+const {readdirSync} = require('fs')
 const client = new Client({// ws: { intents: myIntents }
   disableMentions : 'everyone',
-  ws: { intents: ['GUILDS','GUILD_MESSAGES','GUILD_MEMBERS','GUILD_EMOJIS','GUILD_WEBHOOKS','DIRECT_MESSAGES'] },
+  ws: { intents: ['GUILDS','GUILD_MESSAGES','GUILD_MEMBERS','DIRECT_MESSAGES'] },
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
+["commands","cooldowns"].forEach(x => client[x] = new Collection());
 
-// ***************************************************************************************************
-// ======================================= AU LANCEMENT DU BOT =======================================
-// ***************************************************************************************************
- const {token} = require('./config.js')
+  TextChannel.prototype.sendSuccessMessage = function(content, file){
+    return this.send(`${client.config.emojis.success} ${content}`,{files : file})
+  }
+  TextChannel.prototype.sendErrorMessage = function(content, file){
+    return this.send(`${client.config.emojis.error} ${content}`,{files : file})
+  }
 
-client.commands = new Collection();
+const loadCommands = (client, dir = "./commands") => {
+    readdirSync(dir).forEach(dirs => { 
+      const commands = readdirSync(`${dir}/${dirs}/`).filter(files => files.endsWith(".js"));
+  
+      for (const file of commands) {
+        const getFileName = require(`./${dir}/${dirs}/${file}`);
+        client.commands.set(getFileName.help.name, getFileName);
+        console.log(`Commande chargée: ${getFileName.help.name}`);
+      };
+    });
+  };
+  
+  const loadEvents = (client, dir = "./events") => {
+    readdirSync(dir).forEach(dirs => {
+      const events = readdirSync(`${dir}/${dirs}/`).filter(files => files.endsWith(".js"));
+      for (const event of events) {
+        const evt = require(`${dir}/${dirs}/${event}`);
+        const evtName = event.split(".")[0];
+        client.on(evtName, evt.bind(null, client));
+        console.log(`Evenement chargé: ${evtName}`);
+      };
+    });
+  };
+  
+loadCommands(client);
+loadEvents(client);
 
-// ***************************************************************************************************
-// ============================================== PUBLIC =============================================
-// ***************************************************************************************************
-client.on('ready',()=> require('./commands/public/ping.js')(client));
-client.on('ready',()=> require('./commands/public/avatar.js')(client));
-client.on('ready',()=> require('./commands/public/general.js')(client));
-client.on('ready',()=> require('./commands/public/commandes.js')(client));
-//client.on('ready',()=> require('./commands/public/reseaux.js')(client));
-client.on('ready',()=> require('./commands/public/dés.js')(client));
-
-// ***************************************************************************************************
-// ============================================== ADMIN ==============================================
-// ***************************************************************************************************
-client.on('ready',(message)=> require('./moderateur/addrole.js')(client,message));
-client.on('ready',(message)=> require('./moderateur/remrole.js')(client,message));
-client.on('ready',()=> require('./commands/admin/spiritus.js')(client));
-client.on('ready',()=> require('./moderateur/kick.js')(client));
-client.on('ready',()=> require('./moderateur/ban.js')(client));
-client.on('ready',()=> require('./moderateur/warn.js')(client));
-client.on('ready',()=> require('./moderateur/clear.js')(client));
-
-client.on('ready',(message)=> require('./modmail/modmail.js')(client,message));
-
-
-client.on('ready',()=> require('./events/ready.js')(client));
-
-
-
-
+client.config = require("./config")
+client.login(client.config.TOKEN);
